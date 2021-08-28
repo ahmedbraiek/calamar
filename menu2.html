@@ -1,0 +1,122 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calamar</title>
+  <link rel="stylesheet" href="style1.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body background="g.jpg">
+
+  <div class="wrapper">
+    <nav>
+      <div class="content">
+      <div class="logo"><a href="#">Calamar</a></div>
+        <ul class="links">
+
+          <?php
+          require("connect.php");
+          
+          $user=$_SESSION['user'];
+          $mdp=$_SESSION['mdp'];
+
+          $req = "select * from admin where email='$user' and passad='$mdp'";
+          $res = mysqli_query($connect, $req);
+          if (mysqli_num_rows($res) > 0) { ?>
+
+        <li>
+            <a href="" class="desktop-link">Admin</a>
+            <input type="checkbox" id="show-features">
+            <label for="show-features">Admin</label>
+            <ul>
+			 <li><a href="reglage.html">Reglage</a></li>
+			 <li><a href="ajout_compte.html">Ajouter Copmte</a><li>
+			 <li><a href="liste_compte.php">Liste Compte</a><li> 
+        <li><a href="saison.html">Saison</a><li> 
+			</ul>
+      </li>
+
+      <?php } ?>
+
+
+      <li>
+            <a href="saison_calamar.html" class="desktop-link"><font color="white">Calamar</font></a>
+            <label for="show-services">Calamar</label>
+      </li>
+
+<?php
+require("connect.php");
+
+$id=$_SESSION['id'];
+?>
+
+      <li>
+  <a href="aff.html" class="desktop-link"><font color="white">Liste Calamar</font></a>
+            <label for="show-services">Liste Calamar</label>
+      </li>
+
+      <li>
+        <a href="vente.html" class="desktop-link"><font color="white">Vente</font></a>
+        <label for="show-services">Vente</label>
+  </li>
+
+  <li>
+    <a href="aff1.html" class="desktop-link"><font color="white">Liste Vente</font></a>
+    <label for="show-services">Liste Vente</label>
+</li>
+<?php
+require("connect.php");
+
+$id=$_SESSION['id'];
+
+$req1="select count(lu) as tot from msg where lu='o' and id_env_user='$id'";
+$res1=mysqli_query($connect,$req1);
+$tot=mysqli_fetch_array($res1);
+
+$tot=$tot["tot"]; 
+if($tot>0){ ?>
+<li>
+  <a href="" class="desktop-link">Message (<?php echo $tot; ?>)</a>
+  <input type="checkbox" id="show-features">
+  <label for="show-features">Message</label>
+  <ul>
+<li><a href="msg/msg.html">Envoyer Message</a></li>
+<li><a href="msg/cons_msg.html">Consulter (<?php echo $tot; ?>)</a><li>
+</ul>
+</li>
+<?php } 
+else { ?>
+<li>
+  <a href="" class="desktop-link">Message</a>
+  <input type="checkbox" id="show-features">
+  <label for="show-features">Message</label>
+  <ul>
+<li><a href="msg/msg.html">Envoyer Message</a></li>
+<li><a href="msg/cons_msg.html">Consulter</a><li>
+</ul>
+</li>
+<?php } ?>
+
+
+  
+      
+             
+		  
+		  <li>
+            <a href="index.html" class="desktop-link"><font color="#F83737">Deconnecte</font></a>
+            <label for="show-services">Deconnecte</label>
+           
+      </li>
+		  
+      </div>
+      
+      
+
+</body>
+</html>

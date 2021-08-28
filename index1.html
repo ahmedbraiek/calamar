@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="controle.js"></script>
+</head>
+<body>
+
+
+  <div class="wrapper">
+	<table border="0" width="100%">
+		<tr>
+			<td width="187">
+    <header><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login</font></header></td>
+			<td><img border="0" src="block.jpg" width="75" height="70"></td>
+		</tr>
+	</table>
+
+    <form action="login.php" method="post"  onsubmit="return verif()" name="f">
+	
+      <div class="field email">
+        <div class="input-area">
+          <input type="text" placeholder="Nom User" name="email"><br>
+          <i class="icon fas fa-envelope"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div><br>
+	  
+      <div class="field password">
+        <div class="input-area">
+          <input type="password" placeholder="Password" name="pass">
+          <i class="icon fas fa-lock"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div><br>
+
+
+      <div class="pass-txt"><a href="#"><font color="white"></font></a></div>
+      <input type="submit" value="Login">
+    </form>
+    <div class="sign-txt"><a href="sign.html"><font color="white"></font></a></div>
+  </div>
+
+</body>
+
+</html>

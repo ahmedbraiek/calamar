@@ -1,0 +1,142 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+ <?php
+require("connect.php");
+
+
+
+$user=$_SESSION['user'];
+$mdp=$_SESSION['mdp'];
+
+
+$req = "select * from admin where email='$user' and passad='$mdp'";
+$res = mysqli_query($connect, $req);
+if (mysqli_num_rows($res) > 0) { 
+	
+$id=$_SESSION['id'];
+
+
+
+?>
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calamar</title>
+  <link rel="stylesheet" href="style1.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body background="g.jpg">
+
+  <div class="wrapper">
+    <nav>
+      <div class="content">
+       
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon" ><i class="fas fa-bars"></i></label>
+      <div class="content">
+      <div class="logo">
+     <a href="#">Calamar</a></div>
+        <ul class="links">
+        <li>
+            <input type="checkbox" id="show-features">
+            <label for="show-features">Menu</label>
+        <ul>
+
+			 <li><a href="reglage.html"><font color="#0094A5"><h3>Reglage</h3></font></a></li>
+			 <li><a href="ajout_compte.html"><font color="#0094A5"><h3>Ajouter Copmte</h3></font></a><li>
+			 <li><a href="liste_compte.php"><font color="#0094A5"><h3>Liste Compte</h3></font></a><li> 
+        <li><a href="saison.html"><font color="#0094A5"><h3>Saison</h3></font></a><li> 
+			 
+		    <li><a href="saison_calamar.html"><font color="#032177"><h3>Calamar</h3></font></a></li>
+        <li><a href="aff.html"><font color="#560377"><h3>Afficher Calamar</h3></font></a></li>
+        <li><a href="vente.html"><font color="#032177"><h3>Vente</h3></font></a></li>
+        <li><a href="aff1.html"><font color="#560377"><h3>Afficher Vente</h3></font></a></li>
+
+        <?php
+        require("connect.php");
+        $id=$_SESSION['id'];
+        
+        $req1="select count(lu) as tot from msg where lu='o' and id_env_user='$id'";
+        $res1=mysqli_query($connect,$req1);
+        $tot=mysqli_fetch_array($res1);
+        
+        $tot=$tot["tot"]; ?>
+        <li><a href="msg/msg.html"><font color="#032177"><h3>Envoyer Message</h3></font></a></li>
+        <li><a href="msg/cons_msg.html"><font color="#560377"><h3>Consulter Message(<?php echo $tot; ?>)</h3></font></a></li>
+          <li><a href="index.html"><font color="#7D0A0A"><h3>Deconnecte</h3></font></a></li>
+</ul>
+  </li>
+     
+      <?php } 
+      else { ?>
+      <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Forum de Chat</title>
+  <link rel="stylesheet" href="style1.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body background="g.jpg">
+
+  <div class="wrapper">
+    <nav>
+      <div class="content">
+       <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="content">
+      <div class="logo">
+          
+     <a href="#">Calamar</a></div>
+        <ul class="links">
+            <li>
+            <input type="checkbox" id="show-features">
+            <label for="show-features">Menu</label>
+            <ul>
+                 <?php
+            require("connect.php");
+            $id=$_SESSION['id'];
+            
+            ?>
+            <?php
+          require("connect.php");
+          $id=$_SESSION['id'];
+          
+          $req1="select count(lu) as tot from msg where lu='o' and id_env_user='$id'";
+          $res1=mysqli_query($connect,$req1);
+          $tot=mysqli_fetch_array($res1);
+          
+          $tot=$tot["tot"]; ?>
+            <li><a href="saison_calamar.htm"><font color="#032177"><h3>Calamar</h3></font></a></li>
+            <li><a href="aff.html"><font color="#560377"><h3>Afficher Calamar</h3></font></a></li>
+            <li><a href="vente.html"><font color="#032177"><h3>Vente</h3></font></a></li>
+            <li><a href="aff1.html"><font color="#560377"><h3>Afficher Vente</h3></font></a></li>
+            <li><a href="msg/msg.html"><font color="#032177"><h3>Envoyer Message</h3></font></a></li>
+            <li><a href="msg/cons_msg.html"><font color="#560377"><h3>Consulter(<?php echo $tot; ?>)</h3></font></a></li>
+             <li><a href="index.html"><font color="#7D0A0A"><h3>Deconnecte</h3></font></a></li>
+
+
+        </ul>
+        </li>
+     
+      <?php } ?>
+
+      
+
+        </ul>
+      </div>
+      
+
+
+     
+
+</body>
+</html>

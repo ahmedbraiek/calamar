@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Liste Calamar</title>
+  <link rel="stylesheet" href="style.css">
+<script src=controle.js></script>
+</head>
+<?php
+$d=date("Y-m-d");
+?>
+<body background="g1.jpg">
+
+
+  <div class="wrapper">
+  <table border="0" width="100%">
+		<tr>
+			<td width="187">
+    <header><font color="white">&nbsp;&nbsp;&nbsp;Liste/Calamar&nbsp;&nbsp;</font></header></td>
+		</tr>
+	</table>
+  	<form method="POST" name="f" action="affichage.php"  onsubmit="return verif()">
+
+		<div class="field email">
+			<div class="input-area">
+				<p><h2><font color="#BDB3B8">Date Debut</font></h2></p>
+			  
+		</div>
+		<div class="field email">
+			<div class="input-area">
+				<div>
+					<input type="date" name="dated" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value="<?php echo $d; ?>"><br>
+					<span class="validity"></span>
+				</div>
+			  
+		</div><br>
+		<div class="field email">
+			<div class="input-area">
+				<p><h2><font color="#BDB3B8">Date Fin</font></h2></p>
+			  
+		</div>
+		<div class="field email">
+			<div class="input-area">
+				<div>
+					<input type="date" name="datef" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value="<?php echo $d; ?>"><br>
+					<span class="validity"></span>
+				</div>
+			  
+		</div><br>
+
+		<input type="submit" value="Afficher" >
+	  </form>
+		<form name="f" action="tout.php">
+    
+			<input type="submit" value="Afficher Tout">	
+		 </form>
+		</body>
+		</html>
+
+				

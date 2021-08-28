@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="fr">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Afficher</title>
+<script src=controle.js></script>
+</head>
+
+<body>
+<form action="affichage.php"  method="POST" name="f"  onsubmit="return verif2()">
+<p align="center"><b><i><font size="7" color="#333333">Afficher</font></i></b></p><br><br>
+<table border="0" width="29%">
+	<tr>
+		<td width="107"><b><font size="4">Pecheur :</font></b></td>
+		<td><select size="1" name="pech">
+		<option value ="0">Choisir un pecheur</option>
+		<option value="tous">Afficher Tout Les Pecheur</option>
+		<?php
+		require("connect.php");
+		
+		$req="select * from pecheur order by nompecheur ";
+		
+		$res=mysqli_query($connect,$req);
+
+		while($t=mysqli_fetch_array($res))
+		      echo'<option value="'.$t["idpecheur"].'">'.$t["nompecheur"].'</option>';
+		?>
+		
+		
+</select></td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<table border="0" width="29%" bordercolorlight="#000000" bordercolordark="#000000" style="border-collapse: collapse">
+	<tr>
+		<td width="110"><b><font size="4">Date debut :&nbsp; </font></b> </td>
+		<td><font size="4">
+		<input type="date" name="dated" size="34" style="font-weight: 700" value="2020-01-01"></font></td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<table border="0" width="29%">
+	<tr>
+		<td width="105"><b><font size="4">Date fin : 
+		</font></b> </td>
+		<td><input type="date" name="datef" size="34" value="2022-01-01"></td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" value="Afficher" name="B1" style="font-size: .2in; width: 150; height: 55"><br><br>
+</form>
+</body>
+
+</html>

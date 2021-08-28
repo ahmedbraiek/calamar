@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Saison</title>
+  <link rel="stylesheet" href="style.css">
+<script src=controle1.js></script>
+</head>
+  	
+<body>
+<body background="g.jpg">
+
+
+  <div class="wrapper">
+  <table border="0" width="100%">
+		<tr>
+			<td width="187">
+    <header><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;Saison&nbsp;&nbsp;&nbsp;&nbsp;</font></header></td>
+			<td><img border="0" src="s.png" width="85" height="90"></td>
+		</tr>
+	</table>
+    <form method="POST" name="f" action="saison.php"  onsubmit="return verif0()">
+	
+		<div class="field email">
+        <div class="input-area">
+          <input type="text" placeholder="Entrer La Saison" name="saison"><br>
+        </div><br>
+		  
+
+
+		<input type="submit" value="Ajouter" >
+    </form>
+	
+    <form method="POST" name="f" action="etat_saison.php">
+        <input type="submit" value="Liste Saison" >
+    </form>
+
+</body>
+
+
+</html>

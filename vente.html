@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Saisie Vendre</title>
+  <link rel="stylesheet" href="style.css">
+<script src=controle.js></script>
+</head>
+  	
+<body>
+<body background="g1.jpg">
+
+
+  <div class="wrapper">
+  <table border="0" width="100%">
+		<tr>
+			<td width="187">
+    <header><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vendre&nbsp;&nbsp;&nbsp;&nbsp;</font></header></td>
+			<td><img border="0" src="v.jpg" width="80" height="75"></td>
+		</tr>
+	</table>
+  	<form method="POST" name="f" action="ajout1.php"  onsubmit="return verif2()">
+
+		<?php
+        $d = date("Y-m-d");
+        ?>
+        <div class="field email">
+			<div class="input-area">
+			<div>
+			  <input type="date" name="date" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value="<?php echo $d; ?>"><br>
+			  <span class="validity"></span>
+			</div>
+
+		</div><br>
+		
+		<div class="field email">
+            <div class="input-area">
+              <input type="text" placeholder="Quantite" name="qt"><br>
+    </div><br>
+
+    <div class="field email">
+        <div class="input-area">
+          <input type="text" placeholder="Poids (en gr)" name="p"><br>
+        </div><br>
+		  
+
+		<div class="field email">
+			<div class="input-area">
+			  <input type="text" placeholder="Prix (en dt)" name="prix"><br>
+			</div><br>
+     
+       
+        <div class="field email">
+            <div class="input-area">
+                <textarea rows="4" name="details1" placeholder="Details"  cols="50"></textarea><br>
+        </div><br>
+        
+    
+      
+   
+      <input type="submit" value="Enregistrer" >
+	  
+    </form>
+
+
+</body>
+
+
+</html>
+
+

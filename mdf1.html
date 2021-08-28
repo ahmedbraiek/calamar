@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Mdf Saison</title>
+  <link rel="stylesheet" href="style.css">
+<script src=controle.js></script>
+</head>
+  	
+<body>
+<body background="g1.jpg">
+
+
+  <div class="wrapper">
+  <table border="0" width="100%">
+		<tr>
+			<td width="187">
+    <header><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mdf/Saison&nbsp;&nbsp;&nbsp;&nbsp;</font></header></td>
+		</tr>
+	</table>
+  	<form method="POST" name="f" action="mdf.php"  onsubmit="return verif()">
+
+        <?php
+        require("connect.php");
+        if (mysqli_connect_errno()) {
+          echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+	
+        $tr=$_POST["mdf"]; 
+
+        $req="select saison from saison where idsaison='$tr'";		
+        $res=mysqli_query($connect,$req);
+        $s=mysqli_fetch_array($res);
+
+       $s=$s["saison"];
+        ?>
+   
+    
+		
+      <div class="field email">
+        <div class="input-area">
+          <input type="text" name="saison" value="<?php echo $s; ?>"><br>
+        </div><br>
+		
+       
+      <button type="submit" name="mdf" style="font-size: 18pt; color: #570f0f"  value="<?php echo $tr ?>">Mis a Jour</button>
+	  
+    </form>
+
+
+</body>
+
+
+</html>

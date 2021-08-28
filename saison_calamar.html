@@ -1,0 +1,218 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Saisie Calamar</title>
+  <link rel="stylesheet" href="style.css">
+<script src=controle.js></script>
+</head>
+  	
+<body>
+<body background="g1.jpg">
+	
+
+  <div class="wrapper">
+  <table border="0" width="100%">
+		<tr>
+			<td width="187">
+    <header><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calamar&nbsp;&nbsp;&nbsp;&nbsp;</font></header></td>
+				<td><img border="0" src="c.jpg" width="85" height="90"></td>
+		</tr>
+	</table>
+  	<form method="POST" name="f" action="ajout.php"  onsubmit="return verif0()">
+	
+        <?php
+        $d = date("Y-m-d");
+        ?>
+        <div class="field email">
+			<div class="input-area">
+			<div>
+			  <input type="date" name="date" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value="<?php echo $d; ?>"><br>
+			  <span class="validity"></span>
+			</div>
+
+		</div><br>
+    
+
+        <div class="field email">
+            <div class="input-area">
+              <input type="text" placeholder="Quantite" name="qt"><br>
+    </div><br>
+
+    <div class="field email">
+        <div class="input-area">
+          <input type="text" placeholder="Poids (en gr)" name="p"><br>
+        </div><br>
+		  
+     
+        <div class="input-area">
+		
+          <select size="1" name="e">
+					<option>-------Etat de Mer-------</option>
+                    <option value="Calme">Calme</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Agitee">Agitee</option>
+					</select><br><br>
+        </div>
+		
+        <div class="input-area">
+		    <select size="1" name="v">
+                      <option>----------Vent----------</option>
+                      <option value="Oui">Oui</option>
+                      <option value="Non">Non</option>
+                </select><br><br>
+          </div>
+
+          <div class="input-area">
+		    <select size="1" name="c">
+                      <option>--------Courant---------</option>
+                      <option value="Oui">Oui</option>
+                      <option value="Non">Non</option>
+                </select><br><br>
+          </div>
+
+         <div class="input-area">
+		    <select size="1" name="fr">
+                      <option>------Elmad w Jazr------</option>
+                      <option value="Oui">Oui</option>
+                      <option value="Non">Non</option>
+                </select><br><br>
+            </div>
+
+            <div class="input-area">
+                <select size="1" name="L">
+                          <option>----------Lune----------</option>
+                          <option value="Oui">Oui</option>
+                          <option value="Non">Non</option>
+                    </select><br><br>
+                </div>
+
+        <div class="field email">
+            <div class="input-area">
+                <textarea rows="4" name="details" placeholder="Details"  cols="50"></textarea><br>
+        </div><br>
+       
+      
+   
+      <input type="submit" value="Enregistrer" >
+	  
+    </form>
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Saison Calamar</title>
+<script src=controle.js></script>
+</head>
+
+<body style="background-color:rgb(0, 0, 0);">
+
+<form method="POST" action="ajout.php" name="f" onsubmit="return verif0()" > 
+	<!--webbot bot="SaveResults" U-File="C:\Users\HP\Desktop\Calamar\_private\form_results.csv" S-Format="TEXT/CSV" S-Label-Fields="TRUE"-->
+	<!--<div align="center">
+	<h1><font color="white">Saison Calamar</font></h1>
+	</div>
+	<div align="center">
+
+		<table border="1" width="56%" bordercolorlight="#000000" bordercolordark="#000000" cellpadding="2" style="border-collapse: collapse">
+		
+			<tr>
+				<td width="15%" height="47" align="center"><b>
+				<font color="#ffffff" size="4">Quantite </font>:
+				</font></b> </td>
+				<td width="25%"  height="47" align="center">
+				<input type="text" name="qt" size="28"> </td>
+			</tr>
+			<tr>
+				<td width="332" height="50" align="center"><b>
+				<font color="#ffffff" size="4">Poids (en gr) : </font></b> </td>
+				<td height="50" align="center">
+				<input type="text" name="p" size="28"></td>
+			</tr>
+			<tr>
+				<td width="332" height="39" align="center"><b>
+				<font color="#ffffff" size="4">Etat de la mer<span lang="ar-tn"> </span>&nbsp;:</font></b></td>
+				<td height="39" align="center"><i><font color="#666666">
+				<input type="radio" value="agitee" name="e">&nbsp;Agitee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" value="normal" name="e">&nbsp;&nbsp;Normal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" value="calme" name="e"> Calme</font></i></td>
+			</tr>
+			<tr>
+				<td width="332" height="44" align="center"><b>
+				<font color="#ffffff" size="4">Vent :</font></b></td>
+				<td height="44" align="center"><i><font color="#666666">
+				<input type="radio" value="oui" name="v"> Oui&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" value="non" name="v">&nbsp;Non&nbsp; </font>
+				</i> </td>
+			</tr>
+			<tr>
+				<td width="332" height="46" align="center"><b>
+				<font color="#ffffff" size="4">Courant :</font></b></td>
+				<td height="46" align="center"><i><font color="#666666">
+				<input type="radio" value="oui" name="c"> Oui&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" value="non" name="c">&nbsp;Non&nbsp;&nbsp; 
+				</font></i> </td>
+			</tr>
+			<tr>
+				<td width="332" height="39" align="center"><b>
+				<font color="#ffffff" size="4">Flux et le Reflux&nbsp; :</font></b></td>
+				<td height="39" align="center"><i><font color="#666666">
+				<input type="radio" value="oui" name="fr"> Oui&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" value="non" name="fr">&nbsp;Non&nbsp; </font>
+				</i> </td>
+			</tr>
+			<tr>
+				<td width="332" height="44" align="center"><b>
+				<font size="4" color="#ffffff">La Lune : </font></b></td>
+				<td height="44" align="center"><i><font color="#666666">
+				<input type="radio" value="oui" name="L"> Oui&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" value="non" name="L">&nbsp;Non&nbsp; </font>
+				</i> </td>
+			</tr>
+			<tr>
+				<td width="332" height="106" align="center"><b>
+				<font color="#ffffff" size="4">Details : </font></b> </td>
+				<td height="106" align="center">
+				<textarea rows="5" name="details" cols="23">
+</textarea></td>
+			</tr>
+
+			<tr>
+				<td width="332" height="61" align="center"><b>
+				<font color="#ffffff" size="4">Date : </font></b> </td>
+				<td height="61" align="center">
+				<input type="date" name="date" size="20" value="<?php echo $d ?>"></td>
+			</tr>
+		</table>
+	</div>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="reset" value="Annuler" name="B2" style="font-size: 18pt; color: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="submit" value="Enregistrer" name="B1" style="font-size: 24pt; color: #000000"></p>
+	<p>&nbsp;</p>
+	</fieldset></form>
+
+</body>
+
+</html>
